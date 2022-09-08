@@ -2,6 +2,11 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 // import { trpc } from "../utils/trpc";
+// import About from "./About";
+import Airdrop from "./Airdrop";
+// import Feed from "./Feed";
+// import Treasury from "./Treasury";
+// import Voting from "./Voting";
 
 const Home: NextPage = () => {
   // const hello = trpc.useQuery(["example.hello", { text: "from tRPC" }]);
@@ -14,15 +19,15 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="container flex bg-[#1B202A] h-screen">
-        <aside className="bg-[#343A46] w-[79px] h-screen flex flex-col justify-between">
+      <div className="container flex bg-[#1B202A] min-h-screen">
+        <aside className="bg-[#343A46] w-14 min-h-screen flex flex-col justify-between">
           <div>
-            <div className="h-[90px] grid place-items-center border-l-2 border-[#F07300]">
+            <div className="h-14 grid place-items-center border-l-2 border-[#F07300]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="w-[30px] h-[30px] fill-[#F07300] cursor-pointer"
+                className="w-7 h-7 fill-[#F07300] cursor-pointer"
               >
                 <path
                   fillRule="evenodd"
@@ -31,14 +36,14 @@ const Home: NextPage = () => {
                 />
               </svg>
             </div>
-            <div className="h-[90px] grid place-items-center">
+            <div className="h-14 grid place-items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="w-[30px] h-[30px] stroke-[#B3B9C5] cursor-pointer"
+                className="w-7 h-7 stroke-[#B3B9C5] cursor-pointer"
               >
                 <path
                   strokeLinecap="round"
@@ -52,14 +57,14 @@ const Home: NextPage = () => {
                 />
               </svg>
             </div>
-            <div className="h-[90px] grid place-items-center">
+            <div className="h-14 grid place-items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="w-[30px] h-[30px] stroke-[#B3B9C5] cursor-pointer"
+                className="w-7 h-7 stroke-[#B3B9C5] cursor-pointer"
               >
                 <path
                   strokeLinecap="round"
@@ -69,15 +74,15 @@ const Home: NextPage = () => {
               </svg>
             </div>
           </div>
-          <div className="mb-[30px]">
-            <div className="h-[90px] grid place-items-center">
+          <div className="mb-12">
+            <div className="h-14 grid place-items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="w-[30px] h-[30px] stroke-[#B3B9C5] cursor-pointer mb-[30px]"
+                className="w-7 h-7 stroke-[#B3B9C5] cursor-pointer mb-[30px]"
               >
                 <path
                   strokeLinecap="round"
@@ -85,19 +90,21 @@ const Home: NextPage = () => {
                   d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"
                 />
               </svg>
-              <Image
-                src={"/"}
-                alt={" "}
-                className="bg-gray-500 border-gray-800 rounded-full"
-                height="30px"
-                width="30px"
-              />
+              <div className="h-7 w-7">
+                <Image
+                  src={"/"}
+                  alt={" "}
+                  className="bg-gray-500 border-gray-800 rounded-full"
+                  height="30px"
+                  width="30px"
+                />
+              </div>
             </div>
           </div>
         </aside>
-        <aside className="bg-[#252B36] w-[351px] h-screen">
-          <div className="flex justify-between mb-[30px] mt-[21px] mx-[21px]">
-            <div className="text-[#FAFAFB] text-[33px] font-bold">DAOs</div>
+        <aside className="bg-[#252B36] w-72 min-h-screen">
+          <div className="flex justify-between mb-8 mt-8 mx-6">
+            <div className="text-[#FAFAFB] text-2xl font-bold">DAOs</div>
             <button className="grid place-items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -105,7 +112,7 @@ const Home: NextPage = () => {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="w-[23px] h-[23px] stroke-[#B3B9C5]"
+                className="w-7 h-7 stroke-[#B3B9C5]"
               >
                 <path
                   strokeLinecap="round"
@@ -116,9 +123,9 @@ const Home: NextPage = () => {
             </button>
           </div>
 
-          <ul className="mx-[10px]">
-            <li className="flex flex-row px-[14px] py-[8px]">
-              <div className="mr-[20px]">
+          <ul className="mx-3">
+            <li className="flex flex-row px-3 py-3">
+              <div className="mr-[20px] h-12 w-12">
                 <Image
                   src={"/"}
                   alt={" "}
@@ -127,13 +134,13 @@ const Home: NextPage = () => {
                   width="50px"
                 />
               </div>
-              <div className="text-[18px]">
+              <div className="text-lg">
                 <div className="text-white font-medium">Charm Verse</div>
                 <div className="text-[#B3B9C5] font-light">2.3k members</div>
               </div>
             </li>
-            <li className="flex flex-row px-[14px] py-[8px] after:content-[''] inset-0 bg-[#333945] rounded-[9px]">
-              <div className="mr-[20px]">
+            <li className="flex flex-row px-3 py-3 after:content-[''] inset-0 bg-[#333945] rounded-lg">
+              <div className="mr-[20px] h-12 w-12">
                 <Image
                   src={"/"}
                   alt={" "}
@@ -142,32 +149,22 @@ const Home: NextPage = () => {
                   width="50px"
                 />
               </div>
-              <div className="text-[18px]">
+              <div className="text-lg">
                 <div className="text-white font-medium">Charm Verse</div>
                 <div className="text-[#B3B9C5] font-light">2.3k members</div>
               </div>
             </li>
           </ul>
         </aside>
-        <div className="pt-[20px] px-[52px] grow">
+        <div className="pt-[20px] px-9 grow">
           <nav className="flex justify-between h-[40px] items-center mb-[30px]">
             <div className="text-[33px] text-[#FAFAFB] font-bold">DEMO DAO</div>
-            <ul className="flex gap-[30px] h-min text-white font-bold text-[19px]">
-              <li className="text-white font-bold text-[19px] cursor-pointer">
-                About
-              </li>
-              <li className="text-white font-bold text-[19px] cursor-pointer">
-                Members
-              </li>
-              <li className="text-white font-bold text-[19px] cursor-pointer">
-                Treasure
-              </li>
-              <li className="text-white font-bold text-[19px] cursor-pointer">
-                Feed
-              </li>
-              <li className="text-white font-bold text-[19px] cursor-pointer">
-                Voting
-              </li>
+            <ul className="flex gap-[30px] h-min text-white font-bold text-lg">
+              <li className="text-white cursor-pointer">About</li>
+              <li className="text-white cursor-pointer">Members</li>
+              <li className="text-white cursor-pointer">Treasure</li>
+              <li className="text-white cursor-pointer">Feed</li>
+              <li className="text-white cursor-pointer">Voting</li>
               <li className="flex items-center cursor-pointer">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -186,84 +183,8 @@ const Home: NextPage = () => {
               </li>
             </ul>
           </nav>
-          <div className="flex justify-between">
-            <input
-              type="search"
-              name=""
-              id=""
-              placeholder="Name or wallet address "
-              className="bg-[#252B36] w-[340px] h-[50px] px-[14px] pl-[43px] rounded-[8px] font-[19px] text-white outline-none"
-            />
-            <div className="flex">
-              <div className="h-[50px] w-[50px] bg-[#2A2F3B] rounded-[11px] grid place-items-center mr-[20px] cursor-pointer">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={2}
-                  stroke="currentColor"
-                  className="w-[25px] h-[25px] stroke-[#B3B9C5]"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"
-                  />
-                </svg>
-              </div>
-              <input
-                type="button"
-                value="Add members"
-                className="h-[50px] px-[30px] grid place-items-center bg-[#F07300] text-white text-[19px] font-bold rounded-[10px] cursor-pointer"
-              />
-            </div>
-          </div>
-          <main className="mt-[20px] bg-[#242A35] pt-[30px] px-[30px] rounded-[15px]">
-            <ul className="flex gap-[15px]">
-              <li className="px-[20px] py-[10px] bg-[#F07300] rounded-[25px] text-white text-[17px] font-medium">
-                All <span className="font-normal">124</span>
-              </li>
-              <li className="px-[20px] py-[10px] bg-[#39404C] rounded-[25px] text-[#F5F5F5] text-[17px] font-medium">
-                Admin <span className="font-normal text-[#A0A6B2]">5</span>
-              </li>
-              <li className="px-[20px] py-[10px] bg-[#39404C] rounded-[25px] text-[#F5F5F5] text-[17px] font-medium">
-                Member <span className="font-normal text-[#A0A6B2]">95</span>
-              </li>
-              <li className="px-[20px] py-[10px] bg-[#39404C] rounded-[25px] text-[#F5F5F5] text-[17px] font-medium">
-                Unsigned <span className="font-normal text-[#A0A6B2]">24</span>
-              </li>
-              <li className="px-[20px] py-[10px] bg-[#39404C] rounded-[25px] text-[#F5F5F5] text-[17px] font-medium">
-                Whitelist <span className="font-normal text-[#A0A6B2]">52</span>
-              </li>
-            </ul>
-            <table className="mt-[25px] text-left text-[#B3B9C5]">
-              <thead className="h-[50px]">
-                <tr>
-                  <th className="w-[200px]" colSpan={2}>
-                    Member
-                  </th>
-                  <th className="w-[250px]">Role</th>
-                  <th>Tier</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="h-[60px]">
-                  <td className="h-[60px] w-[30px] flex items-center justify-start">
-                    <Image
-                      src="/"
-                      alt=" "
-                      height="28px"
-                      width="28px"
-                      className="bg-[#D9D9D9] rounded-full"
-                    />
-                  </td>
-                  <td className="text-white">rndmking.eth</td>
-                  <td>Admin</td>
-                  <td>Core Team</td>
-                </tr>
-              </tbody>
-            </table>
-          </main>
+          <Airdrop />
+          {""}
         </div>
       </div>
     </>

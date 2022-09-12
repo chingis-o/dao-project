@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import DaoLists from "../components/DaoLists";
 import Navigation from "../components/Navigation";
 import Sidebar from "../components/Sidebar";
 
 export default function Feed() {
+  const [title] = useState("Demo DAO");
+  const [timeElapsed] = useState("14m");
+  const [post] = useState([
+    "Wow!",
+    "Demo DAO hit another milestone! The first 100 members joined it!",
+  ]);
+
   return (
     <div className="container flex bg-[#1B202A] min-h-screen">
       <Sidebar />
@@ -19,13 +26,16 @@ export default function Feed() {
           </div>
           <div className="bg-[#2A2F3B] rounded-lg p-5 mt-4 text-gray-200">
             <div className="flex justify-between mb-5">
-              <div>Demo DAO</div>
-              <div className="text-gray-500">14m</div>
+              <div>{title}</div>
+              <div className="text-gray-500">{timeElapsed}</div>
             </div>
-            <p className="my-1">Wow!</p>
-            <p className="my-1">
-              Demo DAO hit another milestone! The first 100 members joined it!
-            </p>
+            {post.map((content, index) => {
+              return (
+                <p className="my-1" key={index}>
+                  {content}
+                </p>
+              );
+            })}
           </div>
         </div>
       </div>

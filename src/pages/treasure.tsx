@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import DaoLists from "../components/DaoLists";
 import Navigation from "../components/Navigation";
 import Sidebar from "../components/Sidebar";
 
 export default function Treasure() {
+  const [totalFunds] = useState({ beforeFp: "302,535", afterFp: "50" });
+  const [amountOfAssets] = useState(7);
+  const [walletTotal] = useState("232,527.50");
+  const [walletAssets] = useState(4);
   return (
     <div className="container flex bg-[#1B202A] min-h-screen">
       <Sidebar />
@@ -13,14 +17,15 @@ export default function Treasure() {
         <div>
           <div className="bg-[#2A2F3B] rounded-lg p-5 relative">
             <div className="text-white font-bold text-2xl">
-              $302,535<span className="text-slate-600">.50</span>
+              ${totalFunds.beforeFp}
+              <span className="text-slate-600">.{totalFunds.afterFp}</span>
             </div>
             <div className="absolute right-5 top-5 text-slate-800">
-              $302,535.50
+              ${totalFunds.beforeFp}.{totalFunds.afterFp}
             </div>
             <div className="text-[#767F91]">Total funds</div>
             <div className="p-2 w-max rounded-lg bg-[#333A46] mt-7 text-[#F5F5F5]">
-              7 assets
+              {amountOfAssets} assets
             </div>
             <div className="absolute right-5 bottom-5 text-slate-800">
               100,451.30
@@ -42,8 +47,8 @@ export default function Treasure() {
                     Investment wallet
                     <span className="text-gray-500 ml-3">0x968...4A35</span>
                   </div>
-                  <div className="text-sm">232,527.50 USD</div>
-                  <div className="mt-2">4 assets</div>
+                  <div className="text-sm">{walletTotal} USD</div>
+                  <div className="mt-2">{walletAssets} assets</div>
                 </div>
                 <div className="bg-gray-800 h-max p-2 rounded-md text-sm text-gray-300 cursor-pointer">
                   Gnosis safe

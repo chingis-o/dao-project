@@ -3,6 +3,7 @@ import Image from "next/image";
 import DaoLists from "../components/DaoLists";
 import Navigation from "../components/Navigation";
 import Sidebar from "../components/Sidebar";
+import ArrowUpTray from "../icons/ArrowUpTray";
 
 export default function Members() {
   const [filterTags] = useState([
@@ -37,20 +38,7 @@ export default function Members() {
             />
             <div className="flex">
               <div className="h-11 w-[50px] bg-[#2A2F3B] rounded-[11px] grid place-items-center mr-[20px] cursor-pointer">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={2}
-                  stroke="currentColor"
-                  className="w-[25px] h-[25px] stroke-[#B3B9C5]"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"
-                  />
-                </svg>
+                <ArrowUpTray />
               </div>
               <input
                 type="button"

@@ -2,11 +2,12 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 // import { trpc } from "../utils/trpc";
-// import About from "./About";
+import About from "./About";
 import Airdrop from "./Airdrop";
-// import Feed from "./Feed";
-// import Treasury from "./Treasury";
-// import Voting from "./Voting";
+import Members from "./members";
+import Feed from "./Feed";
+import Treasury from "./Treasury";
+import Voting from "./Voting";
 
 const Home: NextPage = () => {
   // const hello = trpc.useQuery(["example.hello", { text: "from tRPC" }]);

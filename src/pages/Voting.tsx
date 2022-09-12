@@ -5,7 +5,7 @@ export default function Voting() {
     <div className="text-white">
       <div className="flex justify-between items-center mb-5">
         <div className="font-bold text-xl">Proposals</div>
-        <div className="flex bg-slate-700 rounded-lg p-3">
+        <div className="flex bg-[#2A2F3B] rounded-lg p-3">
           <div>demodao.eth</div>
           <div className="after:content-[''] after:inset-0 after:bg-orange-500 ml-2 rounded-lg">
             Add proposals
@@ -27,7 +27,7 @@ export default function Voting() {
           Closed
         </div>
       </div>
-      <div className="bg-slate-700 rounded-lg p-5 mt-4 text-gray-200">
+      <div className="bg-[#2A2F3B] rounded-lg p-5 mt-4 text-gray-200">
         <div className="flex justify-between mb-5 font-semibold">
           <div>Superdao Demo DAO</div>
           <div className="text-gray-400 text-sm">Active</div>

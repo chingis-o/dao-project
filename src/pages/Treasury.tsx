@@ -3,18 +3,18 @@ import React from "react";
 export default function Treasury() {
   return (
     <div>
-      <div className="bg-slate-700 rounded-lg p-5 relative">
+      <div className="bg-[#2A2F3B] rounded-lg p-5 relative">
         <div className="text-white font-bold text-2xl">
           $302,535<span className="text-slate-600">.50</span>
         </div>
         <div className="absolute right-5 top-5 text-slate-800">$302,535.50</div>
-        <div className="text-slate-800">Total funds</div>
-        <div className="p-2 w-max rounded-lg bg-slate-400 mt-7">7 assets</div>
+        <div className="text-[#767F91]">Total funds</div>
+        <div className="p-2 w-max rounded-lg bg-[#333A46] mt-7 text-[#F5F5F5]">7 assets</div>
         <div className="absolute right-5 bottom-5 text-slate-800">
           100,451.30
         </div>
       </div>
-      <div className="bg-slate-700 rounded-lg p-5 mt-4">
+      <div className="bg-[#2A2F3B] rounded-lg p-5 mt-4">
         <div className="flex justify-between mb-3">
           <div className="text-white font-bold text-2xl">
             Wallet <span className="text-slate-400">2</span>
@@ -39,7 +39,7 @@ export default function Treasury() {
           </div>
         </div>
       </div>
-      <div className="bg-slate-700 rounded-lg p-5 mt-4">
+      <div className="bg-[#2A2F3B] rounded-lg p-5 mt-4">
         <div>
           Assets <span>7</span>
         </div>

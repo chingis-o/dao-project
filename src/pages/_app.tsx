@@ -2,19 +2,29 @@
 import { httpBatchLink } from "@trpc/client/links/httpBatchLink";
 import { loggerLink } from "@trpc/client/links/loggerLink";
 import { withTRPC } from "@trpc/next";
+import { ChainId, ThirdwebProvider } from "@thirdweb-dev/react";
 import { SessionProvider } from "next-auth/react";
 import type { AppType } from "next/dist/shared/lib/utils";
 import superjson from "superjson";
 import type { AppRouter } from "../server/router";
 import "../styles/globals.css";
 
+import "regenerator-runtime/runtime";
+
 const MyApp: AppType = ({
   Component,
   pageProps: { session, ...pageProps },
 }) => {
+  // const supportedChainIds = [1, 4, 137];
+
+  // const connectors = {
+  //   injected: {},
+  // };
   return (
     <SessionProvider session={session}>
-      <Component {...pageProps} />
+      <ThirdwebProvider desiredChainId={ChainId.Mainnet}>
+        <Component {...pageProps} />
+      </ThirdwebProvider>
     </SessionProvider>
   );
 };

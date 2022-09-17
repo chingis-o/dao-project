@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useAddress, useDisconnect, useMetamask } from "@thirdweb-dev/react";
 import Image from "next/image";
 import Plus from "../icons/Plus";
 
@@ -6,6 +7,9 @@ export default function DaoLists() {
   const [daos] = useState([
     { name: "Charm Verse", membersAmount: "2.3k members" },
   ]);
+  const connectWithMetamask = useMetamask();
+  const address = useAddress();
+  const disconnect = useDisconnect();
 
   return (
     <aside className="bg-[#252B36] w-72 min-h-screen">
@@ -39,6 +43,33 @@ export default function DaoLists() {
           );
         })}
       </ul>
+      {!address ? (
+        <div className="mx-3 mt-auto">
+          <div className="bg-[rgba(208,220,245,.08)] my-5 w-full rounded-md px-4 py-5">
+            <span className="mt-4 text-white text-[15px] font-bold">
+              Join DAO
+            </span>
+            <div className="text-[rgb(162,168,180)] mb-4">
+              Create your DAO in one click
+            </div>
+            <button
+              onClick={connectWithMetamask}
+              className="px-4 py-1 text-[15px] rounded-md bg-[rgb(252,121,0)] cursor-pointer hover:bg-[rgb(255,147,47)] text-xl font-semibold duration-100 text-white"
+            >
+              Connect wallet
+            </button>
+          </div>
+        </div>
+      ) : (
+        <div className="hover:bg-[rgba(208,220,245,.08)] my-5 mx-3 px-4 py-4 cursor-pointer rounded-lg transition-all">
+          <button
+            className="foregroundPrimary css-1o9ssmv e1ehzyln1"
+            onClick={disconnect}
+          >
+            <span className="text-white font-bold">Log out</span>
+          </button>
+        </div>
+      )}
     </aside>
   );
 }

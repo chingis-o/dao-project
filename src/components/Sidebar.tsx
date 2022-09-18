@@ -9,7 +9,7 @@ import { useAddress } from "@thirdweb-dev/react";
 export default function Sidebar() {
   const address = useAddress();
   return (
-    <aside className="bg-[#343A46] w-14 min-h-screen flex flex-col justify-between">
+    <aside className="bg-[#343A46] fixed w-14 h-screen flex flex-col justify-between">
       <div>
         <div className="h-14 grid place-items-center border-l-2 border-[#F07300]">
           <Squares />

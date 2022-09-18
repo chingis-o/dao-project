@@ -12,7 +12,7 @@ export default function DaoLists() {
   const disconnect = useDisconnect();
 
   return (
-    <aside className="bg-[#252B36] w-72 min-h-screen">
+    <aside className="bg-[#252B36] w-72 min-h-screen ml-14">
       <div className="flex justify-between mb-8 mt-8 mx-6">
         <div className="text-[#FAFAFB] text-2xl font-bold">DAOs</div>
         <button className="grid place-items-center">

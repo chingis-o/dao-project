@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useAddress, useDisconnect, useMetamask } from "@thirdweb-dev/react";
 import Image from "next/image";
 import Plus from "../icons/Plus";
+import Link from "next/link";
 
 export default function DaoLists() {
   const [daos] = useState([
@@ -15,9 +16,11 @@ export default function DaoLists() {
     <aside className="bg-[#252B36] w-72 min-h-screen ml-14">
       <div className="flex justify-between mb-8 mt-8 mx-6">
         <div className="text-[#FAFAFB] text-2xl font-bold">DAOs</div>
-        <button className="grid place-items-center">
-          <Plus />
-        </button>
+        <Link href="/createDao">
+          <button className="grid place-items-center">
+            <Plus />
+          </button>
+        </Link>
       </div>
 
       <ul className="mx-3">
@@ -54,7 +57,7 @@ export default function DaoLists() {
             </div>
             <button
               onClick={connectWithMetamask}
-              className="px-4 py-1 text-[15px] rounded-md bg-[rgb(252,121,0)] cursor-pointer hover:bg-[rgb(255,147,47)] text-xl font-semibold duration-100 text-white"
+              className="px-4 py-1 text-[15px] rounded-md bg-[rgb(252,121,0)] cursor-pointer hover:bg-[rgb(255,147,47)] text-lg font-semibold duration-100 text-white"
             >
               Connect wallet
             </button>

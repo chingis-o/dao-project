@@ -13,7 +13,7 @@ export default function TableContent() {
     },
   ]);
   const [nftsList] = useState([
-    { role: "Сreator", collectionName: "DAO Heroes", daoName: "My first DAO" },
+    { role: "Creator", collectionName: "DAO Heroes", daoName: "My first DAO" },
   ]);
   return (
     <div className="w-full pt-5">

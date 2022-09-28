@@ -28,7 +28,7 @@ export default function DaoCard({
         <span className="w-4 h-4 mr-2">
           <Users />
         </span>
-        {members} <span>members</span>
+        {members} <span className="ml-1">members</span>
       </div>
     </div>
   );

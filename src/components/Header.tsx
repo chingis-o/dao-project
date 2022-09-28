@@ -4,6 +4,7 @@ import ClipBoard from "../icons/ClipBoard";
 import useCopyToClipboard from "../hooks/useCopyToClipboard";
 import toast, { Toaster } from "react-hot-toast";
 import Jazzicon, { jsNumberForAddress } from "react-jazzicon";
+import Link from "next/link";
 
 export default function Header() {
   const [, copy] = useCopyToClipboard();
@@ -34,9 +35,9 @@ export default function Header() {
       <div className="absolute grid place-items-center translate-x-5 -translate-y-[45px] bg-[#2A2F3B] rounded-full h-[90px] w-[90px]">
         <Jazzicon diameter={80} seed={jsNumberForAddress(address ?? "")} />
       </div>
-      <div className="p-6 pt-16">
-        <div className="text-white">
-          <div className="mb-5">
+      <div className="p-6 pt-8">
+        <div className="text-white flex justify-between">
+          <div className="mb-5 mt-10">
             <div className="font-bold text-2xl">{addressTruncated}</div>
             <div className="text-[#767F91] flex">
               {addressTruncated}
@@ -49,8 +50,11 @@ export default function Header() {
               <Toaster position="bottom-center" />
             </div>
           </div>
-          <div className="text-[#F5F5F5] mb-4 text-md"></div>
-          <div className="flex gap-5 text-sm"></div>
+          <Link href="profile/settings">
+            <button className="h-fit px-3 py-2 bg-[#343A46] rounded-md text-sm font-semibold hover:bg-[#424958]">
+              Edit Profile
+            </button>
+          </Link>
         </div>
       </div>
     </div>

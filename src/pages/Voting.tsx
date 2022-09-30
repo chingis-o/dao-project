@@ -5,7 +5,7 @@ import Navigation from "../components/Navigation";
 import MainContainer from "../containers/MainContainer";
 
 export default function Voting() {
-  const [publicAddress] = useState("demodao.eth");
+  // const [publicAddress] = useState("demodao.eth");
   const [proposals] = useState([
     {
       daoName: "Demo DAO",

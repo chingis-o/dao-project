@@ -1,14 +1,19 @@
 import React from "react";
-import { useAddress } from "@thirdweb-dev/react";
 import ClipBoard from "../icons/ClipBoard";
 import useCopyToClipboard from "../hooks/useCopyToClipboard";
 import toast, { Toaster } from "react-hot-toast";
 import Jazzicon, { jsNumberForAddress } from "react-jazzicon";
 import Link from "next/link";
 
-export default function Header() {
+interface IHeader {
+  name?: string;
+  address?: string;
+  description?: string;
+  tags?: string[];
+}
+
+export default function Header({ name, address, description, tags }: IHeader) {
   const [, copy] = useCopyToClipboard();
-  const address = useAddress();
   const addressTruncated =
     address?.slice(0, 6) + "..." + address?.slice(-4, address.length);
 
@@ -38,9 +43,15 @@ export default function Header() {
       <div className="p-6 pt-8">
         <div className="text-white flex justify-between">
           <div className="mb-5 mt-10">
-            <div className="font-bold text-2xl">{addressTruncated}</div>
+            <div className="font-bold text-2xl">
+              {name ? name : addressTruncated}
+            </div>
             <div className="text-[#767F91] flex">
-              {addressTruncated}
+              {address
+                ? address.length > 20
+                  ? addressTruncated
+                  : address
+                : ""}
               <span
                 className="cursor-pointer ml-2 h-5 w-5"
                 onClick={copyToClipboard}
@@ -50,11 +61,28 @@ export default function Header() {
               <Toaster position="bottom-center" />
             </div>
           </div>
-          <Link href="profile/settings">
-            <button className="h-fit px-3 py-2 bg-[#343A46] rounded-md text-sm font-semibold hover:bg-[#424958]">
-              Edit Profile
-            </button>
-          </Link>
+          {!name ? (
+            <Link href="profile/settings">
+              <button className="h-fit px-3 py-2 bg-[#343A46] rounded-md text-sm font-semibold hover:bg-[#424958]">
+                Edit Profile
+              </button>
+            </Link>
+          ) : null}
+        </div>
+        <div className="text-[#F5F5F5] mb-4 text-md">{description}</div>
+        <div className="flex gap-5 text-sm">
+          {tags
+            ? tags.map((tag, index) => {
+                return (
+                  <div
+                    className="bg-[#333A46] rounded-md p-2 text-white"
+                    key={index}
+                  >
+                    {tag}
+                  </div>
+                );
+              })
+            : null}
         </div>
       </div>
     </div>

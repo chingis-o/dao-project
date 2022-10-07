@@ -1,10 +1,12 @@
 import React from "react";
+import { useAddress } from "@thirdweb-dev/react";
 import Head from "next/head";
 import MainContainer from "../containers/MainContainer";
 import Header from "../components/Header";
 import TableContent from "../containers/TableContent";
 
-export default function profile() {
+export default function Profile() {
+  const address = useAddress();
   return (
     <>
       <Head>
@@ -13,7 +15,7 @@ export default function profile() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <MainContainer>
-        <Header />
+        <Header address={address} />
         <TableContent />
       </MainContainer>
     </>

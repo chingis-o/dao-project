@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useAddress } from "@thirdweb-dev/react";
 import Head from "next/head";
 import MainContainer from "../containers/MainContainer";
@@ -7,6 +7,17 @@ import TableContent from "../containers/TableContent";
 
 export default function Profile() {
   const address = useAddress();
+  const [daosList] = useState([
+    {
+      name: "Verification DAO",
+      role: "admin",
+      description: "This DAO grants you special NFT as a Proof of Verification",
+      members: 2,
+    },
+  ]);
+  const [nftsList] = useState([
+    { role: "Creator", collectionName: "DAO Heroes", daoName: "My first DAO" },
+  ]);
   return (
     <>
       <Head>
@@ -16,7 +27,7 @@ export default function Profile() {
       </Head>
       <MainContainer>
         <Header address={address} />
-        <TableContent />
+        <TableContent daosList={daosList} nftsList={nftsList} />
       </MainContainer>
     </>
   );

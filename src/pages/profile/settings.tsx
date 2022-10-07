@@ -2,7 +2,7 @@ import Head from "next/head";
 import React from "react";
 import MainContainer from "../../containers/MainContainer";
 
-export default function settings() {
+export default function Settings() {
   return (
     <>
       <Head>

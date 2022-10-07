@@ -1,8 +1,8 @@
-import Head from "next/head";
 import React, { useState } from "react";
+import Head from "next/head";
 import MainContainer from "../containers/MainContainer";
 
-export default function createVoting() {
+export default function CreateVoting() {
   const [votingType, setVotingType] = useState("Send MATIC");
   const [recipientAddress, setRecipientAddress] = useState("0x3423412a5b3m");
   const [value, setValue] = useState("0.1");

@@ -1,8 +1,24 @@
 import Head from "next/head";
-import React from "react";
+import React, { useState } from "react";
 import MainContainer from "../../containers/MainContainer";
 
 export default function Settings() {
+  const [displayName, setDisplayName] = useState("");
+  const [publicUrl, setPublicUrl] = useState(
+    "app.daoproject.com/users/453c43jsdcc"
+  );
+  const [bio, setBio] = useState("");
+  const [email, setEmail] = useState("");
+  const [walletAddress, setWalletAddress] = useState(
+    "0x3B31f54678Da6aC1BFE6A93aa0D4a776f726115c"
+  );
+  const [links, setLinks] = useState({
+    personalSite: "",
+    twitter: "",
+    instagram: "",
+    telegram: "",
+    discord: "",
+  });
   return (
     <>
       <Head>
@@ -29,8 +45,10 @@ export default function Settings() {
               <div className="mt-3 bg-[rgba(208,220,245,0.08)] py-2 px-3 rounded-md">
                 <input
                   type="text"
-                  className="border-none bg-transparent outline-none"
+                  className="border-none bg-transparent outline-none w-full"
                   placeholder="Enter your display name"
+                  value={displayName}
+                  onChange={(e) => setDisplayName(e.target.value)}
                 />
               </div>
             </div>
@@ -39,8 +57,9 @@ export default function Settings() {
               <div className="mt-3 bg-[rgba(208,220,245,0.08)] py-2 px-3 rounded-md">
                 <input
                   type="text"
-                  className="border-none bg-transparent outline-none"
-                  placeholder="Enter your display name"
+                  className="border-none bg-transparent outline-none w-full"
+                  value={publicUrl}
+                  onChange={(e) => setPublicUrl(e.target.value)}
                 />
               </div>
             </div>
@@ -49,8 +68,10 @@ export default function Settings() {
               <div className="mt-3 bg-[rgba(208,220,245,0.08)] py-2 px-3 rounded-md">
                 <input
                   type="text"
-                  className="border-none bg-transparent outline-none"
+                  className="border-none bg-transparent outline-none w-full"
                   placeholder="Enter your bio"
+                  value={bio}
+                  onChange={(e) => setBio(e.target.value)}
                 />
               </div>
             </div>
@@ -59,8 +80,10 @@ export default function Settings() {
               <div className="mt-3 bg-[rgba(208,220,245,0.08)] py-2 px-3 rounded-md">
                 <input
                   type="text"
-                  className="border-none bg-transparent outline-none"
+                  className="border-none bg-transparent outline-none w-full"
                   placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
             </div>
@@ -69,8 +92,9 @@ export default function Settings() {
               <div className="mt-3 bg-[rgba(208,220,245,0.08)] py-2 px-3 rounded-md">
                 <input
                   type="text"
-                  className="border-none bg-transparent outline-none"
-                  placeholder="Enter your display name"
+                  className="border-none bg-transparent outline-none w-full"
+                  value={walletAddress}
+                  onChange={(e) => setWalletAddress(e.target.value)}
                 />
               </div>
             </div>
@@ -79,36 +103,75 @@ export default function Settings() {
               <div className="mt-3 bg-[rgba(208,220,245,0.08)] py-2 px-3 rounded-md">
                 <input
                   type="text"
-                  className="border-none bg-transparent outline-none"
+                  className="border-none bg-transparent outline-none w-full"
                   placeholder="Personal site link"
+                  value={links.personalSite}
+                  onChange={(e) =>
+                    setLinks((prev) => ({
+                      ...prev,
+                      personalSite: e.target.value,
+                    }))
+                  }
                 />
               </div>
-              <div className="mt-3 bg-[rgba(208,220,245,0.08)] py-2 px-3 rounded-md">
+              <div className="mt-3 bg-[rgba(208,220,245,0.08)] py-2 px-3 rounded-md flex">
+                <span>twitter.com/</span>
                 <input
                   type="text"
-                  className="border-none bg-transparent outline-none"
-                  placeholder="Twitter"
+                  className="border-none bg-transparent outline-none ml-1 w-full"
+                  placeholder="Twitter link or username"
+                  value={links.twitter}
+                  onChange={(e) =>
+                    setLinks((prev) => ({
+                      ...prev,
+                      twitter: e.target.value,
+                    }))
+                  }
                 />
               </div>
-              <div className="mt-3 bg-[rgba(208,220,245,0.08)] py-2 px-3 rounded-md">
+              <div className="mt-3 bg-[rgba(208,220,245,0.08)] py-2 px-3 rounded-md flex">
+                <span>instagram.com/</span>
                 <input
                   type="text"
-                  className="border-none bg-transparent outline-none"
-                  placeholder="Instagram"
+                  className="border-none bg-transparent outline-none ml-1 w-full"
+                  placeholder="Instagram link or username"
+                  value={links.instagram}
+                  onChange={(e) =>
+                    setLinks((prev) => ({
+                      ...prev,
+                      instagram: e.target.value,
+                    }))
+                  }
                 />
               </div>
-              <div className="mt-3 bg-[rgba(208,220,245,0.08)] py-2 px-3 rounded-md">
+              <div className="mt-3 bg-[rgba(208,220,245,0.08)] py-2 px-3 rounded-md flex">
+                <span>t.me/</span>
                 <input
                   type="text"
-                  className="border-none bg-transparent outline-none"
-                  placeholder="Telegram"
+                  className="border-none bg-transparent outline-none ml-1 w-full"
+                  placeholder="Telegram link or username"
+                  value={links.telegram}
+                  onChange={(e) =>
+                    setLinks((prev) => ({
+                      ...prev,
+                      telegram: e.target.value,
+                    }))
+                  }
                 />
               </div>
-              <div className="mt-3 bg-[rgba(208,220,245,0.08)] py-2 px-3 rounded-md">
+              <div className="mt-3 bg-[rgba(208,220,245,0.08)] py-2 px-3 rounded-md flex">
+                <span>discord.com/invite/</span>
                 <input
                   type="text"
-                  className="border-none bg-transparent outline-none"
-                  placeholder="Discord"
+                  className="border-none bg-transparent outline-none ml-1 w-full"
+                  placeholder="Discord server link"
+                  value={links.discord}
+                  onChange={(e) =>
+                    setLinks((prev) => ({
+                      ...prev,
+                      discord: e.target.value,
+                    }))
+                  }
                 />
               </div>
             </div>

@@ -1,8 +1,9 @@
 import Head from "next/head";
-import React from "react";
+import React, { useState } from "react";
 import MainContainer from "../containers/MainContainer";
 
-export default function createDao() {
+export default function CreateDao() {
+  const [quorum, setQuorum] = useState(40);
   return (
     <>
       <Head>
@@ -76,16 +77,40 @@ export default function createDao() {
               <div className="text-lg">Set up a Quorum</div>
               <div className="mt-5">
                 <label htmlFor="">Quorum</label>
-                <div className="mt-3 bg-[rgba(208,220,245,0.08)] py-2 px-3 rounded-md">
+                <div className="mt-3 py-2 rounded-md flex items-center">
+                  <button
+                    data-action="decrement"
+                    className=" bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-8 w-12 rounded-l cursor-pointer outline-none"
+                    onClick={() =>
+                      setQuorum((prev) => (prev === 0 ? prev : prev - 1))
+                    }
+                  >
+                    <div className="text-2xl">-</div>
+                  </button>
                   <input
                     type="number"
-                    className="border-none bg-transparent outline-none"
-                    // value="2"
+                    min="0"
+                    max="100"
+                    disabled
+                    className="outline-none focus:outline-none text-center h-8 w-10 bg-gray-300 font-semibold text-md hover:text-black focus:text-black flex items-center text-gray-700"
+                    value={quorum}
                   />
+                  <button
+                    data-action="increment"
+                    className="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-8 w-12 rounded-r cursor-pointer"
+                    onClick={() =>
+                      setQuorum((prev) => (prev === 100 ? prev : prev + 1))
+                    }
+                  >
+                    <div className="text-2xl">+</div>
+                  </button>
                   <input
                     type="range"
-                    className="border-none bg-transparent outline-none"
-                    placeholder="Enter a partner address"
+                    min="0"
+                    max="100"
+                    value={quorum}
+                    onChange={(e) => setQuorum(Number(e.target.value))}
+                    className="ml-5 range range-xs range-accent"
                   />
                 </div>
               </div>
@@ -94,7 +119,7 @@ export default function createDao() {
               <input
                 type="button"
                 value="Create a DAO"
-                className="h-11 px-[30px] grid place-items-center bg-[#F07300] text-white text-base font-bold rounded-lg cursor-pointer"
+                className="h-11 px-[30px] grid place-items-center bg-[rgb(240,115,0)] text-white text-base font-bold rounded-lg cursor-pointer"
               />
             </div>
           </div>

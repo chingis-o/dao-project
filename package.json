@@ -19,6 +19,7 @@
     "@trpc/next": "^9.27.2",
     "@trpc/react": "^9.27.2",
     "@trpc/server": "^9.27.2",
+    "daisyui": "^2.31.0",
     "ethers": "^5.7.1",
     "next": "12.2.5",
     "next-auth": "^4.10.3",

@@ -1,8 +1,13 @@
 import Head from "next/head";
 import React, { useState } from "react";
+import DaoNameForm from "../components/DaoNameForm";
+import PartnersSettingForm from "../components/PartnersSettingForm";
+import QuorumSettingForm from "../components/QuorumSettingForm";
 import MainContainer from "../containers/MainContainer";
 
 export default function CreateDao() {
+  const [newDao, setNewDao] = useState({ name: "", symbol: "" });
+  const [partners, setPartners] = useState([{ address: "", tokens: 1 }]);
   const [quorum, setQuorum] = useState(40);
   return (
     <>
@@ -20,101 +25,12 @@ export default function CreateDao() {
               same parameters. Distribute government tokens between addresses
               that will participate in voting
             </div>
-            <div className="mt-10">
-              <div className="text-lg">Name your DAO</div>
-              <div className="mt-5">
-                <label htmlFor="">DAO name</label>
-                <div className="mt-3 bg-[rgba(208,220,245,0.08)] py-2 px-3 rounded-md">
-                  <input
-                    type="text"
-                    className="border-none bg-transparent outline-none"
-                    placeholder="Enter your DAO name"
-                  />
-                </div>
-                <div className="mt-3">
-                  <label htmlFor="">DAO symbol</label>
-                  <div className="mt-3 bg-[rgba(208,220,245,0.08)] py-2 px-3 rounded-md">
-                    <input
-                      type="text"
-                      className="border-none bg-transparent outline-none"
-                      placeholder="Enter your DAO symbol"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="mt-10">
-              <div className="text-lg">Set up your partners & Shares</div>
-              <div className="mt-5">
-                <label htmlFor="">Partner address</label>
-                <div className="mt-3 bg-[rgba(208,220,245,0.08)] py-2 px-3 rounded-md">
-                  <input
-                    type="text"
-                    className="border-none bg-transparent outline-none"
-                    placeholder="Enter a partner address"
-                  />
-                </div>
-                <div className="mt-3">
-                  <label htmlFor="">Government token amount</label>
-                  <div className="mt-3 bg-[rgba(208,220,245,0.08)] py-2 px-3 rounded-md">
-                    <input
-                      type="text"
-                      className="border-none bg-transparent outline-none"
-                      placeholder="1"
-                    />
-                  </div>
-                </div>
-                <div className="mt-7 mb-7">
-                  <input
-                    type="button"
-                    value="Add a partner"
-                    className="h-11 px-[30px] grid place-items-center bg-[#F07300] text-white text-base font-bold rounded-lg cursor-pointer"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="mt-10">
-              <div className="text-lg">Set up a Quorum</div>
-              <div className="mt-5">
-                <label htmlFor="">Quorum</label>
-                <div className="mt-3 py-2 rounded-md flex items-center">
-                  <button
-                    data-action="decrement"
-                    className=" bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-8 w-12 rounded-l cursor-pointer outline-none"
-                    onClick={() =>
-                      setQuorum((prev) => (prev === 0 ? prev : prev - 1))
-                    }
-                  >
-                    <div className="text-2xl">-</div>
-                  </button>
-                  <input
-                    type="number"
-                    min="0"
-                    max="100"
-                    disabled
-                    className="outline-none focus:outline-none text-center h-8 w-10 bg-gray-300 font-semibold text-md hover:text-black focus:text-black flex items-center text-gray-700"
-                    value={quorum}
-                  />
-                  <button
-                    data-action="increment"
-                    className="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-8 w-12 rounded-r cursor-pointer"
-                    onClick={() =>
-                      setQuorum((prev) => (prev === 100 ? prev : prev + 1))
-                    }
-                  >
-                    <div className="text-2xl">+</div>
-                  </button>
-                  <input
-                    type="range"
-                    min="0"
-                    max="100"
-                    value={quorum}
-                    onChange={(e) => setQuorum(Number(e.target.value))}
-                    className="ml-5 range range-xs range-accent"
-                  />
-                </div>
-              </div>
-            </div>
+            <DaoNameForm newDao={newDao} setNewDao={setNewDao} />
+            <PartnersSettingForm
+              partners={partners}
+              setPartners={setPartners}
+            />
+            <QuorumSettingForm quorum={quorum} setQuorum={setQuorum} />
             <div className="mt-7 mb-7">
               <input
                 type="button"

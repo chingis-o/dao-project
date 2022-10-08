@@ -58,7 +58,7 @@ export default function Members() {
     },
   ]);
   const [activeTag, setActiveTage] = useState(0);
-  const [query, setQuery] = useState("")
+  const [query, setQuery] = useState("");
 
   return (
     <>
@@ -124,13 +124,13 @@ export default function Members() {
                     ? data
                     : data.role === filterTags[activeTag].role
                 )
-                .filter((data) => query ? data.name.includes(query) : data)
+                .filter((data) => (query ? data.name.includes(query) : data))
                 .map((data, index) => {
                   return (
                     <tr className="h-[60px]" key={index}>
                       <td className="h-[60px] w-[30px] flex items-center justify-start">
                         <Image
-                          src="/"
+                          src="/user.png"
                           alt=" "
                           height="28px"
                           width="28px"

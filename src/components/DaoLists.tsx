@@ -30,8 +30,8 @@ export default function DaoLists() {
               <li className="flex flex-row px-3 py-3 cursor-pointer">
                 <div className="mr-[20px] h-12 w-12">
                   <Image
-                    src={"/"}
-                    alt={" "}
+                    src="/user.png"
+                    alt=" "
                     className="bg-gray-500 border-gray-800 rounded-full"
                     height="50px"
                     width="50px"

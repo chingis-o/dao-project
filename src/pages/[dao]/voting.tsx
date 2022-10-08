@@ -1,8 +1,8 @@
 import Head from "next/head";
 import Link from "next/link";
 import React, { useState } from "react";
-import Navigation from "../components/Navigation";
-import MainContainer from "../containers/MainContainer";
+import Navigation from "../../components/Navigation";
+import MainContainer from "../../containers/MainContainer";
 
 export default function Voting() {
   // const [publicAddress] = useState("demodao.eth");

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import Navigation from "../components/Navigation";
-import ArrowUpTray from "../icons/ArrowUpTray";
-import MainContainer from "../containers/MainContainer";
+import Navigation from "../../components/Navigation";
+import ArrowUpTray from "../../icons/ArrowUpTray";
+import MainContainer from "../../containers/MainContainer";
 import Head from "next/head";
 
 export default function Members() {

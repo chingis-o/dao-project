@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React, { useState } from "react";
-import Navigation from "../components/Navigation";
-import MainContainer from "../containers/MainContainer";
+import Navigation from "../../components/Navigation";
+import MainContainer from "../../containers/MainContainer";
 
 export default function Treasure() {
   const [totalFunds] = useState({ beforeFp: "302,535", afterFp: "50" });

@@ -1,9 +1,9 @@
 import Head from "next/head";
 import React, { useState } from "react";
-import Header from "../components/Header";
-import Navigation from "../components/Navigation";
-import MainContainer from "../containers/MainContainer";
-import TableContent from "../containers/TableContent";
+import Header from "../../components/Header";
+import Navigation from "../../components/Navigation";
+import MainContainer from "../../containers/MainContainer";
+import TableContent from "../../containers/TableContent";
 
 export default function About() {
   const [title] = useState("Demo DAO");
@@ -12,11 +12,6 @@ export default function About() {
     useState(`Welcome to the demo DAO Enjoy your experience of being part of
   your first DAO`);
   const [tags] = useState(["Smart Contract", "Support", "Creator guide"]);
-  // const [amountOfNFTs] = useState(3);
-  // const [amountInCrypto] = useState("5000 MATIC");
-  // const [amountInUSD] = useState("3 126.52USD");
-  // const [heldTokens] = useState(8);
-  // const [overallTokens] = useState(1000);
   const [nftsList] = useState([
     { role: "Creator", collectionName: "DAO Heroes", daoName: "My first DAO" },
   ]);

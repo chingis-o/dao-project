@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function DaoLists() {
   const [daos] = useState([
-    { name: "Charm Verse", membersAmount: "2.3k members" },
+    { name: "Demo DAO", membersAmount: "6 members", link: "demo" },
   ]);
   const connectWithMetamask = useMetamask();
   const address = useAddress();
@@ -26,23 +26,25 @@ export default function DaoLists() {
       <ul className="mx-3">
         {daos.map((data, index) => {
           return (
-            <li className="flex flex-row px-3 py-3" key={index}>
-              <div className="mr-[20px] h-12 w-12">
-                <Image
-                  src={"/"}
-                  alt={" "}
-                  className="bg-gray-500 border-gray-800 rounded-full"
-                  height="50px"
-                  width="50px"
-                />
-              </div>
-              <div className="text-lg">
-                <div className="text-white font-medium">{data.name}</div>
-                <div className="text-[#B3B9C5] font-light">
-                  {data.membersAmount}
+            <Link href={`/${data.link}`} key={index}>
+              <li className="flex flex-row px-3 py-3 cursor-pointer">
+                <div className="mr-[20px] h-12 w-12">
+                  <Image
+                    src={"/"}
+                    alt={" "}
+                    className="bg-gray-500 border-gray-800 rounded-full"
+                    height="50px"
+                    width="50px"
+                  />
                 </div>
-              </div>
-            </li>
+                <div className="text-lg">
+                  <div className="text-white font-medium">{data.name}</div>
+                  <div className="text-[#B3B9C5] font-light">
+                    {data.membersAmount}
+                  </div>
+                </div>
+              </li>
+            </Link>
           );
         })}
       </ul>

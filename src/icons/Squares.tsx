@@ -6,7 +6,7 @@ export default function Squares() {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="currentColor"
-      className="w-7 h-7 fill-[#F07300] cursor-pointer"
+      className="w-7 h-7 fill-accent cursor-pointer"
     >
       <path
         fillRule="evenodd"

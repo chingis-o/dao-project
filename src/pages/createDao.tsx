@@ -35,7 +35,7 @@ export default function CreateDao() {
               <input
                 type="button"
                 value="Create a DAO"
-                className="h-11 px-[30px] grid place-items-center bg-[rgb(240,115,0)] text-white text-base font-bold rounded-lg cursor-pointer"
+                className="h-11 px-[30px] grid place-items-center bg-accent text-white text-base font-bold rounded-lg cursor-pointer"
               />
             </div>
           </div>

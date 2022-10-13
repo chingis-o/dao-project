@@ -26,7 +26,7 @@ export default function FilteringTags({
           <li
             key={index}
             className={`px-[20px] py-[10px] ${
-              activeTag === index ? "bg-[#F07300]" : "bg-[#39404C]"
+              activeTag === index ? "bg-accent" : "bg-secondary-content"
             } rounded-full text-white cursor-pointer`}
             onClick={() => setActiveTage(index)}
           >

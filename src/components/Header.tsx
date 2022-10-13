@@ -34,9 +34,9 @@ export default function Header({ name, address, description }: IHeader) {
   };
 
   return (
-    <div className="rounded-lg bg-[#2A2F3B] overflow-hidden">
+    <div className="rounded-lg bg-secondary overflow-hidden">
       <div className="bg-[#9A6AE7] h-40"></div>
-      <div className="absolute grid place-items-center translate-x-5 -translate-y-[45px] bg-[#2A2F3B] rounded-full h-[90px] w-[90px]">
+      <div className="absolute grid place-items-center translate-x-5 -translate-y-[45px] bg-secondary rounded-full h-[90px] w-[90px]">
         <Jazzicon diameter={80} seed={jsNumberForAddress(address ?? "")} />
       </div>
       <div className="p-6 pt-8">

@@ -11,7 +11,7 @@ export default function DaoLists() {
   const disconnect = useDisconnect();
 
   return (
-    <aside className="bg-[#252B36] w-72 min-h-screen ml-14">
+    <aside className="bg-[#292D32] w-72 min-h-screen ml-14">
       <div className="flex justify-between mb-8 mt-8 mx-6">
         <div className="text-[#FAFAFB] text-xl font-bold">Your DAOs</div>
         <Link href="/createDao">

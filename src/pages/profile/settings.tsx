@@ -172,7 +172,7 @@ export default function Settings() {
               <input
                 type="button"
                 value="Save"
-                className="h-11 px-[30px] grid place-items-center bg-[#F07300] text-white text-base font-bold rounded-lg cursor-pointer"
+                className="h-11 px-[30px] grid place-items-center bg-accent text-white text-base font-bold rounded-lg cursor-pointer"
               />
             </div>
           </div>

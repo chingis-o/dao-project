@@ -19,7 +19,7 @@ export default function Feed() {
         <Navigation />
         <div className="container flex bg-[#1B202A] min-h-screen">
           <div className="pt-[20px] grow">
-            <div className="bg-[#2A2F3B] rounded-lg py-3 pr-6 mt-4 flex items-center">
+            <div className="bg-secondary rounded-lg py-3 pr-6 mt-4 flex items-center">
               <textarea
                 className="bg-[#333A46] text-white placeholder:text-[#5B6372] rounded-md ml-5 py-2 px-5 w-full outline-none"
                 placeholder="Write a post"
@@ -39,7 +39,7 @@ export default function Feed() {
             {posts.map((post, index) => {
               return (
                 <div
-                  className="bg-[#2A2F3B] rounded-lg p-5 mt-4 text-gray-200"
+                  className="bg-secondary rounded-lg p-5 mt-4 text-gray-200"
                   key={index}
                 >
                   <div className="flex justify-between mb-5">

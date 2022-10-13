@@ -15,7 +15,7 @@ export default function DaoCard({
   members,
 }: IDaoCards) {
   return (
-    <div className="bg-[#2A2F3B] w-60 p-4 rounded-lg flex flex-col">
+    <div className="bg-secondary w-60 p-4 rounded-lg flex flex-col">
       <div className="flex justify-between">
         <div className="bg-[#767F91] text-sm h-10 w-10 rounded-full"></div>
         <div className="text-[#36BED9] text-sm bg-[rgba(54,190,217,0.15)] px-2 py-1 rounded-sm h-fit">

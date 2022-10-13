@@ -8,7 +8,6 @@ import dao from "../../mocks/dao";
 
 export default function About() {
   const [title] = useState(dao.title);
-  const [link] = useState(window.location.href);
   const [description] = useState(dao.description);
   const [nftsList] = useState(dao.nftsList);
   return (
@@ -20,7 +19,7 @@ export default function About() {
       </Head>
       <MainContainer>
         <Navigation />
-        <Header description={description} name={title} address={link} />
+        <Header description={description} name={title} address={""} />
         <TableContent nftsList={nftsList} />
       </MainContainer>
     </>

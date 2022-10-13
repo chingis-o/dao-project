@@ -18,7 +18,7 @@ export default function Treasure() {
       <MainContainer>
         <Navigation />
         <>
-          <div className="bg-[#2A2F3B] rounded-lg p-5 relative">
+          <div className="bg-secondary rounded-lg p-5 relative">
             <div className="text-white font-bold text-2xl">
               ${totalFunds.beforeFp}
               <span className="text-[#717A8C]">.{totalFunds.afterFp}</span>
@@ -34,12 +34,12 @@ export default function Treasure() {
               100,451.30
             </div>
           </div>
-          <div className="bg-[#2A2F3B] rounded-lg p-5 mt-4">
+          <div className="bg-secondary rounded-lg p-5 mt-4">
             <div className="flex justify-between mb-3">
               <div className="text-white font-bold text-lg">
                 Wallet<span className="text-[#717A8C] ml-2">2</span>
               </div>
-              <div className="text-orange-500 font-semibold cursor-pointer">
+              <div className="text-accent font-semibold cursor-pointer">
                 Add wallet
               </div>
             </div>
@@ -68,7 +68,7 @@ export default function Treasure() {
               );
             })}
           </div>
-          <div className="bg-[#2A2F3B] rounded-lg p-5 my-4 text-white">
+          <div className="bg-secondary rounded-lg p-5 my-4 text-white">
             <div className="text-lg font-bold">
               Assets
               <span className="text-[#717A8C] ml-2">{assetsList.length}</span>

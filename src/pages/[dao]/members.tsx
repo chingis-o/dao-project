@@ -24,7 +24,7 @@ export default function Members() {
       <MainContainer>
         <Navigation />
         <SearchBar query={query} setQuery={setQuery} />
-        <main className="mt-[20px] bg-[#242A35] pt-[30px] px-[30px] rounded-[15px]">
+        <main className="mt-[20px] bg-secondary pt-[30px] px-[30px] rounded-[15px]">
           <FilteringTags
             members={members}
             tagsByRole={tagsByRole}

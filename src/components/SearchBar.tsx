@@ -15,7 +15,7 @@ export default function SearchBar({ query, setQuery }: ISearchBar) {
         placeholder="Enter username"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        className="bg-[#252B36] w-[340px] h-11 px-[14px] pl-[43px] rounded-[8px] font-xl text-white outline-none"
+        className="bg-secondary w-[340px] h-11 px-[14px] pl-[43px] rounded-[8px] font-xl text-white outline-none"
       />
     </div>
   );

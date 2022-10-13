@@ -19,7 +19,7 @@ export default function Airdrop() {
                 <div className="font-semibold">Uploaded file</div>
                 <div className="text-orange-500">Change CSV</div>
               </div>
-              <div className="bg-[#2A2F3B] rounded-lg p-5 mt-4">
+              <div className="bg-secondary rounded-lg p-5 mt-4">
                 <div>dao_whitelist.csv</div>
                 <div className="flex gap-3">
                   <div className="text-green-500 font-semibold">
@@ -36,21 +36,21 @@ export default function Airdrop() {
           <div className="grid grid-cols-2">
             <div className="pr-14">
               <div className="mb-3">Tier from CSV</div>
-              <div className="bg-[#2A2F3B] rounded-lg p-5 pl-20 mb-10">
+              <div className="bg-secondary rounded-lg p-5 pl-20 mb-10">
                 <div className="font-bold">Not found</div>
                 <div className="text-gray-500">2 wallets</div>
               </div>
-              <div className="h-11 px-[30px] w-max grid place-items-center bg-[#F07300] text-white text-base font-bold rounded-lg cursor-pointer">
+              <div className="h-11 px-[30px] w-max grid place-items-center bg-accent text-white text-base font-bold rounded-lg cursor-pointer">
                 Send 5 NFTs
               </div>
             </div>
             <div className="pr-14">
               <div className="mb-3">NFT tier</div>
-              <div className="bg-[#2A2F3B] rounded-lg p-5 mb-5 pl-20">
+              <div className="bg-secondary rounded-lg p-5 mb-5 pl-20">
                 <div className="font-bold">Member</div>
                 <div className="text-gray-500">1000 units available</div>
               </div>
-              <div className="bg-[#2A2F3B] rounded-lg p-5 pl-20">
+              <div className="bg-secondary rounded-lg p-5 pl-20">
                 <div className="font-bold">Not assigned</div>
                 <div className="text-gray-500">Dont send NFT</div>
               </div>

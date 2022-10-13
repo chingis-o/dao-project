@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function Sidebar() {
   const address = useAddress();
   return (
-    <aside className="bg-[#343A46] fixed w-14 h-screen flex flex-col justify-between">
+    <aside className="bg-neutral fixed w-14 h-screen flex flex-col justify-between">
       <Link href="/">
         <div className="h-14 grid place-items-center">
           <Squares />

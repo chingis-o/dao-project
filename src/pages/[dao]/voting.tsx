@@ -22,8 +22,8 @@ export default function Voting() {
           <div className="flex justify-between items-center mb-5">
             <div className="font-bold text-xl">Proposals</div>
             <Link href="/createVoting">
-              <button className="flex bg-orange-500 rounded-lg p-3">
-                <div className="after:content-[''] after:inset-0 after:bg-orange-500 ml-2 rounded-lg">
+              <button className="flex bg-accent rounded-lg p-3">
+                <div className="after:content-[''] after:inset-0 after:bg-accent ml-2 rounded-lg">
                   Add proposals
                 </div>
               </button>
@@ -36,7 +36,7 @@ export default function Voting() {
                 <li
                   key={index}
                   className={`px-[20px] py-[10px] ${
-                    data.isActive ? "bg-[#F07300]" : "bg-[#39404C]"
+                    data.isActive ? "bg-accent" : "bg-secondary-content"
                   } rounded-full text-white`}
                 >
                   {data.name}
@@ -48,7 +48,7 @@ export default function Voting() {
             return (
               <div
                 key={index}
-                className="bg-[#2A2F3B] rounded-lg p-5 mt-4 text-gray-200"
+                className="bg-secondary rounded-lg p-5 mt-4 text-gray-200"
               >
                 <div className="flex justify-between mb-5 font-semibold">
                   <div>{proposal.daoName}</div>

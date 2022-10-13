@@ -1,61 +1,45 @@
 import React, { useState } from "react";
-import Image from "next/image";
 import Navigation from "../../components/Navigation";
-import ArrowUpTray from "../../icons/ArrowUpTray";
 import MainContainer from "../../containers/MainContainer";
 import Head from "next/head";
+import SearchBar from "../../components/SearchBar";
+import FilteringTags from "../../components/FilteringTags";
+import MembersList from "../../components/MembersList";
+import { IMember } from "../../interfaces/IMember";
 
 export default function Members() {
-  const [members] = useState([
+  const [members] = useState<IMember[]>([
     {
       name: "user.eth",
       role: "Admin",
-      team: "Core Team",
     },
     {
       name: "user2.eth",
       role: "Member",
-      team: "Core Team",
     },
     {
       name: "user3.eth",
       role: "Whitelist",
-      team: "Core Team",
     },
     {
       name: "user4.eth",
       role: "Unsigned",
-      team: "Core Team",
     },
     {
       name: "user5.eth",
       role: "Unsigned",
-      team: "Core Team",
     },
     {
       name: "user6.eth",
       role: "Unsigned",
-      team: "Core Team",
     },
   ]);
-  const [filterTags] = useState([
-    { role: "All", amount: members.length },
-    {
-      role: "Admin",
-      amount: members.filter((data) => data.role === "Admin").length,
-    },
-    {
-      role: "Member",
-      amount: members.filter((data) => data.role === "Member").length,
-    },
-    {
-      role: "Unsigned",
-      amount: members.filter((data) => data.role === "Unsigned").length,
-    },
-    {
-      role: "Whitelist",
-      amount: members.filter((data) => data.role === "Whitelist").length,
-    },
+  const [tagsByRole] = useState([
+    "All",
+    "Admin",
+    "Member",
+    "Unsigned",
+    "Whitelist",
   ]);
   const [activeTag, setActiveTage] = useState(0);
   const [query, setQuery] = useState("");
@@ -69,76 +53,20 @@ export default function Members() {
       </Head>
       <MainContainer>
         <Navigation />
-        <div className="flex justify-between">
-          <input
-            type="search"
-            name=""
-            id=""
-            placeholder="Name or wallet address "
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            className="bg-[#252B36] w-[340px] h-11 px-[14px] pl-[43px] rounded-[8px] font-xl text-white outline-none"
-          />
-          <div className="flex">
-            <div className="h-11 w-[50px] bg-[#2A2F3B] rounded-[11px] grid place-items-center mr-[20px] cursor-pointer">
-              <ArrowUpTray />
-            </div>
-            <input
-              type="button"
-              value="Add members"
-              className="h-11 px-[30px] grid place-items-center bg-[#F07300] text-white text-base font-bold rounded-lg cursor-pointer"
-            />
-          </div>
-        </div>
+        <SearchBar query={query} setQuery={setQuery} />
         <main className="mt-[20px] bg-[#242A35] pt-[30px] px-[30px] rounded-[15px]">
-          <ul className="flex gap-5 text-sm font-medium">
-            {filterTags.map((data, index) => {
-              return (
-                <li
-                  key={index}
-                  className={`px-[20px] py-[10px] ${
-                    activeTag === index ? "bg-[#F07300]" : "bg-[#39404C]"
-                  } rounded-full text-white cursor-pointer`}
-                  onClick={() => setActiveTage(index)}
-                >
-                  {data.role}
-                  <span className="font-normal ml-2">{data.amount}</span>
-                </li>
-              );
-            })}
-          </ul>
-          <table className="mt-[25px] text-left text-[#B3B9C5]">
-            <thead className="h-[50px]">
-              <tr>
-                <th className="w-[200px]" colSpan={2}>
-                  Member
-                </th>
-                <th className="w-[250px]">Role</th>
-                <th>Tier</th>
-              </tr>
-            </thead>
-            <tbody>
-              {members
-                .filter((data) =>
-                  filterTags[activeTag].role === "All"
-                    ? data
-                    : data.role === filterTags[activeTag].role
-                )
-                .filter((data) => (query ? data.name.includes(query) : data))
-                .map((data, index) => {
-                  return (
-                    <tr className="h-[60px]" key={index}>
-                      <td className="h-[60px] w-[30px] flex items-center justify-start">
-                        <div className="bg-[#D9D9D9] rounded-full h-[28px] w-[28px]" />
-                      </td>
-                      <td className="text-white">{data.name}</td>
-                      <td>{data.role}</td>
-                      <td>{data.team}</td>
-                    </tr>
-                  );
-                })}
-            </tbody>
-          </table>
+          <FilteringTags
+            members={members}
+            tagsByRole={tagsByRole}
+            activeTag={activeTag}
+            setActiveTage={setActiveTage}
+          />
+          <MembersList
+            members={members}
+            tagsByRole={tagsByRole}
+            activeTag={activeTag}
+            query={query}
+          />
         </main>
       </MainContainer>
     </>

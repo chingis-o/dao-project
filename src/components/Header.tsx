@@ -9,10 +9,9 @@ interface IHeader {
   name?: string;
   address?: string;
   description?: string;
-  tags?: string[];
 }
 
-export default function Header({ name, address, description, tags }: IHeader) {
+export default function Header({ name, address, description }: IHeader) {
   const [, copy] = useCopyToClipboard();
   const addressTruncated =
     address?.slice(0, 6) + "..." + address?.slice(-4, address.length);
@@ -48,7 +47,7 @@ export default function Header({ name, address, description, tags }: IHeader) {
             </div>
             <div className="text-[#767F91] flex">
               {address
-                ? address.length > 20
+                ? address.length > 40
                   ? addressTruncated
                   : address
                 : ""}
@@ -70,20 +69,6 @@ export default function Header({ name, address, description, tags }: IHeader) {
           ) : null}
         </div>
         <div className="text-[#F5F5F5] mb-4 text-md">{description}</div>
-        <div className="flex gap-5 text-sm">
-          {tags
-            ? tags.map((tag, index) => {
-                return (
-                  <div
-                    className="bg-[#333A46] rounded-md p-2 text-white"
-                    key={index}
-                  >
-                    {tag}
-                  </div>
-                );
-              })
-            : null}
-        </div>
       </div>
     </div>
   );

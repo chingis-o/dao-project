@@ -8,13 +8,11 @@ export default function Sidebar() {
   const address = useAddress();
   return (
     <aside className="bg-[#343A46] fixed w-14 h-screen flex flex-col justify-between">
-      <div>
-        <Link href="/">
-          <div className="h-14 grid place-items-center">
-            <Squares />
-          </div>
-        </Link>
-      </div>
+      <Link href="/">
+        <div className="h-14 grid place-items-center">
+          <Squares />
+        </div>
+      </Link>
       <div className="h-14 grid place-items-center mb-2">
         <Link href="/profile">
           <div className="h-7 w-7 cursor-pointer">

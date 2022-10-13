@@ -7,7 +7,7 @@ import TableContent from "../../containers/TableContent";
 
 export default function About() {
   const [title] = useState("Demo DAO");
-  const [link] = useState("superdao.co/demodao");
+  const [link] = useState(window.location.href);
   const [description] =
     useState(`Welcome to the demo DAO Enjoy your experience of being part of
   your first DAO`);

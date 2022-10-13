@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import EllipsisHorizontal from "../icons/EllipsisHorizontal";
 import { useRouter } from "next/router";
 
 export default function Navigation() {
@@ -30,9 +29,6 @@ export default function Navigation() {
         </li>
         <li className="text-white">
           <Link href={`/${daoId}/voting` }>Voting</Link>
-        </li>
-        <li className="flex items-center cursor-pointer">
-          <EllipsisHorizontal />
         </li>
       </ul>
     </nav>

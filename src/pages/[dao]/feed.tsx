@@ -24,9 +24,8 @@ export default function Feed() {
         <div className="container flex bg-[#1B202A] min-h-screen">
           <div className="pt-[20px] grow">
             <div className="bg-[#2A2F3B] rounded-lg py-3 pr-6 mt-4 flex items-center">
-              <div className="mx-5 text-[#5B6372]">Logo</div>
               <textarea
-                className="bg-[#333A46] text-white placeholder:text-[#5B6372] rounded-md py-2 px-5 w-full outline-none"
+                className="bg-[#333A46] text-white placeholder:text-[#5B6372] rounded-md ml-5 py-2 px-5 w-full outline-none"
                 placeholder="Write a post"
                 value={post}
                 onChange={(e) => setPost(e.target.value)}

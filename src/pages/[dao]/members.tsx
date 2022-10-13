@@ -129,13 +129,7 @@ export default function Members() {
                   return (
                     <tr className="h-[60px]" key={index}>
                       <td className="h-[60px] w-[30px] flex items-center justify-start">
-                        <Image
-                          src="/user.png"
-                          alt=" "
-                          height="28px"
-                          width="28px"
-                          className="bg-[#D9D9D9] rounded-full"
-                        />
+                        <div className="bg-[#D9D9D9] rounded-full h-[28px] w-[28px]" />
                       </td>
                       <td className="text-white">{data.name}</td>
                       <td>{data.role}</td>

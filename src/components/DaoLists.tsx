@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useAddress, useDisconnect, useMetamask } from "@thirdweb-dev/react";
-import Image from "next/image";
 import Plus from "../icons/Plus";
 import Link from "next/link";
 
@@ -15,27 +14,20 @@ export default function DaoLists() {
   return (
     <aside className="bg-[#252B36] w-72 min-h-screen ml-14">
       <div className="flex justify-between mb-8 mt-8 mx-6">
-        <div className="text-[#FAFAFB] text-2xl font-bold">DAOs</div>
+        <div className="text-[#FAFAFB] text-xl font-bold">Your DAOs</div>
         <Link href="/createDao">
           <button className="grid place-items-center">
             <Plus />
           </button>
         </Link>
       </div>
-
       <ul className="mx-3">
         {daos.map((data, index) => {
           return (
             <Link href={`/${data.link}`} key={index}>
               <li className="flex flex-row px-3 py-3 cursor-pointer">
                 <div className="mr-[20px] h-12 w-12">
-                  <Image
-                    src="/user.png"
-                    alt=" "
-                    className="bg-gray-500 border-gray-800 rounded-full"
-                    height="50px"
-                    width="50px"
-                  />
+                  <div className="bg-gray-500 border-gray-800 rounded-full h-[50px] w-[50px]"></div>
                 </div>
                 <div className="text-lg">
                   <div className="text-white font-medium">{data.name}</div>

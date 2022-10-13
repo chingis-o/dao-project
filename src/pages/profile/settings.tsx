@@ -1,24 +1,17 @@
 import Head from "next/head";
 import React, { useState } from "react";
 import MainContainer from "../../containers/MainContainer";
+import userSettings from "../../mocks/userSettings";
 
 export default function Settings() {
-  const [displayName, setDisplayName] = useState("");
-  const [publicUrl, setPublicUrl] = useState(
-    "app.daoproject.com/users/453c43jsdcc"
-  );
-  const [bio, setBio] = useState("");
-  const [email, setEmail] = useState("");
+  const [displayName, setDisplayName] = useState(userSettings.displayName);
+  const [publicUrl, setPublicUrl] = useState(userSettings.publicUrl);
+  const [bio, setBio] = useState(userSettings.bio);
+  const [email, setEmail] = useState(userSettings.email);
   const [walletAddress, setWalletAddress] = useState(
-    "0x3B31f54678Da6aC1BFE6A93aa0D4a776f726115c"
+    userSettings.walletAddress
   );
-  const [links, setLinks] = useState({
-    personalSite: "",
-    twitter: "",
-    instagram: "",
-    telegram: "",
-    discord: "",
-  });
+  const [links, setLinks] = useState(userSettings.links);
   return (
     <>
       <Head>

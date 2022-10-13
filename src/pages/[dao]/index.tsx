@@ -4,16 +4,13 @@ import Header from "../../components/Header";
 import Navigation from "../../components/Navigation";
 import MainContainer from "../../containers/MainContainer";
 import TableContent from "../../containers/TableContent";
+import dao from "../../mocks/dao";
 
 export default function About() {
-  const [title] = useState("Demo DAO");
+  const [title] = useState(dao.title);
   const [link] = useState(window.location.href);
-  const [description] =
-    useState(`Welcome to the demo DAO Enjoy your experience of being part of
-  your first DAO`);
-  const [nftsList] = useState([
-    { role: "Creator", collectionName: "DAO Heroes", daoName: "My first DAO" },
-  ]);
+  const [description] = useState(dao.description);
+  const [nftsList] = useState(dao.nftsList);
   return (
     <>
       <Head>
@@ -23,11 +20,7 @@ export default function About() {
       </Head>
       <MainContainer>
         <Navigation />
-        <Header
-          description={description}
-          name={title}
-          address={link}
-        />
+        <Header description={description} name={title} address={link} />
         <TableContent nftsList={nftsList} />
       </MainContainer>
     </>

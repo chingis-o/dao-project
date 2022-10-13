@@ -6,41 +6,11 @@ import SearchBar from "../../components/SearchBar";
 import FilteringTags from "../../components/FilteringTags";
 import MembersList from "../../components/MembersList";
 import { IMember } from "../../interfaces/IMember";
+import membersList from "../../mocks/membersList";
 
 export default function Members() {
-  const [members] = useState<IMember[]>([
-    {
-      name: "user.eth",
-      role: "Admin",
-    },
-    {
-      name: "user2.eth",
-      role: "Member",
-    },
-    {
-      name: "user3.eth",
-      role: "Whitelist",
-    },
-    {
-      name: "user4.eth",
-      role: "Unsigned",
-    },
-    {
-      name: "user5.eth",
-      role: "Unsigned",
-    },
-    {
-      name: "user6.eth",
-      role: "Unsigned",
-    },
-  ]);
-  const [tagsByRole] = useState([
-    "All",
-    "Admin",
-    "Member",
-    "Unsigned",
-    "Whitelist",
-  ]);
+  const [members] = useState<IMember[]>(membersList.list);
+  const [tagsByRole] = useState(membersList.tagsByRole);
   const [activeTag, setActiveTage] = useState(0);
   const [query, setQuery] = useState("");
 

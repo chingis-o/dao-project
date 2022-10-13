@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import { useAddress, useDisconnect, useMetamask } from "@thirdweb-dev/react";
 import Plus from "../icons/Plus";
 import Link from "next/link";
+import daosList from "../mocks/daosList";
 
 export default function DaoLists() {
-  const [daos] = useState([
-    { name: "Demo DAO", membersAmount: "6 members", link: "demo" },
-  ]);
+  const [daos] = useState(daosList);
   const connectWithMetamask = useMetamask();
   const address = useAddress();
   const disconnect = useDisconnect();

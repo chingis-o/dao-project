@@ -26,7 +26,7 @@ export default function TableContent({ daosList, nftsList }: ITableContent) {
               </span>
             </div>
           </div>
-          <div className="my-5">
+          <div className="my-5 flex gap-x-5 gap-y-10 flex-wrap">
             {daosList ? (
               daosList.length ? (
                 daosList.map((value, index) => {
@@ -52,7 +52,7 @@ export default function TableContent({ daosList, nftsList }: ITableContent) {
                 </span>
               </div>
             </div>
-            <div className="my-5">
+            <div className="my-5 flex gap-x-5 gap-y-10 flex-wrap">
               {nftsList.map((value, index) => {
                 return <NftCard key={index} {...value} />;
               })}

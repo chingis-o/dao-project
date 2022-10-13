@@ -3,24 +3,11 @@ import Link from "next/link";
 import React, { useState } from "react";
 import Navigation from "../../components/Navigation";
 import MainContainer from "../../containers/MainContainer";
+import voting from "../../mocks/voting";
 
 export default function Voting() {
-  // const [publicAddress] = useState("demodao.eth");
-  const [proposals] = useState([
-    {
-      daoName: "Demo DAO",
-      status: "Active",
-      title: "Which NFT artwork from our collection do you like most?",
-      description: "Choose one of the artwork",
-      deadline: "Ends in 1 day",
-    },
-  ]);
-  const [filterTags] = useState([
-    { name: "All", isActive: true },
-    { name: "Active", isActive: false },
-    { name: "Upcoming", isActive: false },
-    { name: "Closed", isActive: false },
-  ]);
+  const [proposals] = useState(voting.proposals);
+  const [filterTags] = useState(voting.filteringTags);
 
   return (
     <>
@@ -36,7 +23,6 @@ export default function Voting() {
             <div className="font-bold text-xl">Proposals</div>
             <Link href="/createVoting">
               <button className="flex bg-orange-500 rounded-lg p-3">
-                {/* <div>{publicAddress}</div> */}
                 <div className="after:content-[''] after:inset-0 after:bg-orange-500 ml-2 rounded-lg">
                   Add proposals
                 </div>

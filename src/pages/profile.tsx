@@ -4,20 +4,12 @@ import Head from "next/head";
 import MainContainer from "../containers/MainContainer";
 import Header from "../components/Header";
 import TableContent from "../containers/TableContent";
+import profile from "../mocks/profile";
 
 export default function Profile() {
   const address = useAddress();
-  const [daosList] = useState([
-    {
-      name: "Verification DAO",
-      role: "admin",
-      description: "This DAO grants you special NFT as a Proof of Verification",
-      members: 2,
-    },
-  ]);
-  const [nftsList] = useState([
-    { role: "Creator", collectionName: "DAO Heroes", daoName: "My first DAO" },
-  ]);
+  const [daosList] = useState(profile.daosList);
+  const [nftsList] = useState(profile.nftsList);
   return (
     <>
       <Head>

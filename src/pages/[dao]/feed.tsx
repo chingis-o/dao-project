@@ -2,15 +2,11 @@ import Head from "next/head";
 import React, { useState } from "react";
 import Navigation from "../../components/Navigation";
 import MainContainer from "../../containers/MainContainer";
+import feeds from "../../mocks/feeds";
 
 export default function Feed() {
-  const [title] = useState("Demo DAO");
-  const [timeElapsed] = useState("14m");
-  const [post, setPost] = useState("");
-  const [posts, setPosts] = useState([
-    "Wow!",
-    "Demo DAO hit another milestone! The first 100 members joined it!",
-  ]);
+  const [newPost, setNewPost] = useState("");
+  const [posts, setPosts] = useState(feeds);
 
   return (
     <>
@@ -27,30 +23,36 @@ export default function Feed() {
               <textarea
                 className="bg-[#333A46] text-white placeholder:text-[#5B6372] rounded-md ml-5 py-2 px-5 w-full outline-none"
                 placeholder="Write a post"
-                value={post}
-                onChange={(e) => setPost(e.target.value)}
+                value={newPost}
+                onChange={(e) => setNewPost(e.target.value)}
                 onKeyDown={(e) => {
                   if (e.key === "Enter") {
-                    setPosts([post, ...posts]);
-                    setPost("");
+                    setPosts([
+                      { title: "", timeElapsed: "14m", text: [newPost] },
+                      ...posts,
+                    ]);
+                    setNewPost("");
                   }
                 }}
               ></textarea>
             </div>
-            {posts.map((content, index) => {
+            {posts.map((post, index) => {
               return (
                 <div
                   className="bg-[#2A2F3B] rounded-lg p-5 mt-4 text-gray-200"
                   key={index}
                 >
                   <div className="flex justify-between mb-5">
-                    <div>{title}</div>
-                    <div className="text-gray-500">{timeElapsed}</div>
+                    <div>{post.title}</div>
+                    <div className="text-gray-500">{post.timeElapsed}</div>
                   </div>
-                  <p className="my-1" key={index}>
-                    {content}
-                  </p>
-                  )
+                  {post.text.map((paragraph, index) => {
+                    return (
+                      <p className="my-1" key={index}>
+                        {paragraph}
+                      </p>
+                    );
+                  })}
                 </div>
               );
             })}

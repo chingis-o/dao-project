@@ -18,8 +18,10 @@ export default function Navigation() {
           return (
             <li
               key={index}
-              className={`relative after:absolute after:content-[''] after:-inset-1 after:top-auto after:h-[2px] after:bg-white ${
-                router.asPath === link ? "after:scale-x-100" : "after:scale-x-0"
+              className={`relative after:absolute after:content-[''] after:-inset-1 after:top-auto after:h-[2px] after:scale-x-0 ${
+                router.asPath === link
+                  ? "text-accent text-xl after:bg-accent"
+                  : "after:bg-white"
               } hover:after:scale-x-100 hover:after:duration-300`}
             >
               <Link href={link}>{pathname}</Link>

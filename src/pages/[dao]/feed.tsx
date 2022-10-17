@@ -2,10 +2,12 @@ import Head from "next/head";
 import React, { useState } from "react";
 import Navigation from "../../components/Navigation";
 import MainContainer from "../../containers/MainContainer";
+import TextareaAutosize from "react-textarea-autosize";
 import feeds from "../../mocks/feeds";
 
 export default function Feed() {
   const [newPost, setNewPost] = useState("");
+  const [isWriting, setIsWriting] = useState(false);
   const [posts, setPosts] = useState(feeds);
 
   return (
@@ -19,22 +21,44 @@ export default function Feed() {
         <Navigation />
         <div className="container flex bg-transparent min-h-screen">
           <div className="pt-[20px] grow">
-            <div className="bg-secondary rounded-lg py-3 pr-6 mt-4 flex items-center">
-              <textarea
-                className="bg-neutral text-white placeholder:text-[#5B6372] rounded-md ml-5 py-2 px-5 w-full outline-none"
-                placeholder="Write a post"
-                value={newPost}
-                onChange={(e) => setNewPost(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter") {
-                    setPosts([
-                      { title: "", timeElapsed: "14m", text: [newPost] },
-                      ...posts,
+            <div className="bg-secondary rounded-lg p-5 mt-4 flex flex-col items-start">
+              <div
+                className="bg-neutral text-white rounded-md py-2 px-5 w-full outline-none"
+                onClick={() =>
+                  isWriting ? setIsWriting(false) : setIsWriting(true)
+                }
+                onFocus={() => setIsWriting(true)}
+                onBlur={() => setIsWriting(false)}
+              >
+                {!isWriting && !newPost ? (
+                  <span className="text-[#5B6372]">Write your post</span>
+                ) : (
+                  <TextareaAutosize
+                    className="bg-transparent py-2 outline-none w-full resize-none text-base"
+                    value={newPost}
+                    onChange={(e) => setNewPost(e.target.value)}
+                    autoFocus
+                  />
+                )}
+              </div>
+              <button
+                className="bg-accent rounded-md mt-3 px-5 py-2 text-white font-bold"
+                onClick={() => {
+                  if (newPost) {
+                    setPosts((prev) => [
+                      {
+                        title: "DEMO DAO",
+                        timeElapsed: "14m",
+                        text: newPost.split("\n"),
+                      },
+                      ...prev,
                     ]);
                     setNewPost("");
                   }
                 }}
-              ></textarea>
+              >
+                Post
+              </button>
             </div>
             {posts.map((post, index) => {
               return (
@@ -48,7 +72,7 @@ export default function Feed() {
                   </div>
                   {post.text.map((paragraph, index) => {
                     return (
-                      <p className="my-1" key={index}>
+                      <p className="my-1 break-all" key={index}>
                         {paragraph}
                       </p>
                     );

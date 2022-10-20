@@ -14,7 +14,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <MainContainer>
-        <div className="h-screen grid place-items-center">No DAO selected</div>
+        <div className="h-full grid place-items-center">No DAO selected</div>
       </MainContainer>
     </>
   );

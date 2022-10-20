@@ -14,11 +14,16 @@ export default function Sidebar() {
         </div>
       </Link>
       <div className="h-14 grid place-items-center mb-2">
-        <Link href="/profile">
-          <div className="h-7 w-7 cursor-pointer">
-            <Jazzicon diameter={30} seed={jsNumberForAddress(address ?? "")} />
-          </div>
-        </Link>
+        {address && (
+          <Link href="/profile">
+            <div className="h-7 w-7 cursor-pointer">
+              <Jazzicon
+                diameter={30}
+                seed={jsNumberForAddress(address ?? "")}
+              />
+            </div>
+          </Link>
+        )}
       </div>
     </aside>
   );

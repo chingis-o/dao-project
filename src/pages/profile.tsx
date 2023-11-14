@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useAddress } from "@thirdweb-dev/react";
 import Head from "next/head";
 import MainContainer from "../containers/MainContainer";
 import Header from "../components/Header";
@@ -7,7 +6,6 @@ import TableContent from "../containers/TableContent";
 import profile from "../mocks/profile";
 
 export default function Profile() {
-  const address = useAddress();
   const [daosList] = useState(profile.daosList);
   const [nftsList] = useState(profile.nftsList);
   return (
@@ -18,7 +16,7 @@ export default function Profile() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <MainContainer>
-        <Header address={address} />
+        <Header/>
         <TableContent daosList={daosList} nftsList={nftsList} />
       </MainContainer>
     </>

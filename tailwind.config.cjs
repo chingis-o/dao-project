@@ -5,16 +5,7 @@ module.exports = {
     extend: {},
   },
   daisyui: {
-    themes: [
-      {
-        light: {
-          accent: "#F67565",
-          secondary: "#292D32",
-          neutral: "#303439",
-          "secondary-content": "#494D50",
-        },
-      },
-    ],
+    themes: [],
   },
   plugins: [require("daisyui")],
 };
